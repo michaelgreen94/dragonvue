@@ -55,7 +55,7 @@ export default new Vuex.Store({
       commit('setDragon', dragon)
     },
     startGame({ commit, dispatch }, gameConfig) {
-      api.post('games', { dragonId: gameConfig.dragon.id, championId: gameConfig.campion.id })
+      api.post('games', { dragonId: gameConfig.dragon.id, championId: gameConfig.champion.id })
         .then(res => {
           commit('setGame', res.data.game)
         })
