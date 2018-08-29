@@ -1,8 +1,9 @@
 <template>
   <div class="champions">
     <div class="loading" v-if="champions.length == 0">Loading Champs</div>
-    <div class="champion" v-else v-for="champion in champion" :key="champion.id" @click="setChampion(champion)"></div>
-    {{champion.name}}
+    <div class="champion" v-else v-for="champion in champions" :key="champion.id" @click="setChampion(champion)">
+      {{champion.name}}
+    </div>
   </div>
 </template>
 
@@ -17,7 +18,7 @@
       }
     },
     methods: {
-      setChampion() {
+      setChampion(champion) {
         this.$store.dispatch('setChampion', champion)
       }
     }

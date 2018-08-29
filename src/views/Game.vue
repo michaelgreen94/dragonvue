@@ -34,10 +34,11 @@
     },
     methods: {
       startGame() {
-        this.$store.dispatch('startGame', {
+        let gameConfig = {
           champion: this.champion,
           dragon: this.dragon
-        })
+        }
+        this.$store.dispatch('startGame', gameConfig)
       }
     }
   }
@@ -46,6 +47,13 @@
 <style>
   .select-game-details {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    margin: 3rem
+  }
+
+  .game-config {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem
   }
 </style>
